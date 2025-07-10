@@ -7,20 +7,15 @@
 
 body {
   padding: 20px;
-}
-
-.main-title {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 30px;
-  color: #333;
+  background-color: #f8f8f8;
 }
 
 .form {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 20px;
   justify-content: center;
+  margin-bottom: 30px;
 }
 
 input {
@@ -28,17 +23,28 @@ input {
   font-size: 16px;
   border-radius: 8px;
   border: 1px solid #ccc;
+  width: 200px;
 }
 
-button {
-  padding: 10px 15px;
-  background-color: #4caf50;
+.btn {
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
+
+.cart-link {
+  background-color: orange;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+
 .prods,
-.cart {
+.info {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -46,36 +52,80 @@ button {
 }
 
 .card {
+  width: 220px;
   background-color: white;
-  width: 250px;
-  border-radius: 12px;
-  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
 }
 
 .card img {
   width: 100%;
-  height: 180px;
-  border-radius: 8px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.card h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.card .desc {
+  font-size: 13px;
+  color: #888;
   margin-bottom: 10px;
 }
 
-.card h3 {
-  font-size: 20px;
-  margin-bottom: 8px;
+.card .price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
   color: #333;
 }
 
-.card p {
-  margin-bottom: 6px;
-  color: #555;
+.stars {
+  margin-bottom: 15px;
 }
 
-.cart-link {
-  display: inline-block;
-  margin-bottom: 20px;
+.star {
   font-size: 18px;
-  text-decoration: none;
-  color: #4caf50;
-  text-align: center;
+  margin: 0 2px;
+  color: #fca120;
+}
+
+.star.inactive {
+  color: #ccc;
+}
+
+.buy-btn {
+  padding: 10px;
+  width: 100%;
+  border-radius: 0 0 15px 15px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+}
+.delete-btn {
+  padding: 10px;
+  width: 100%;
+  border-radius: 0 0 15px 15px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: crimson;
+  color: white;
+  margin-top: 10px;
 }
