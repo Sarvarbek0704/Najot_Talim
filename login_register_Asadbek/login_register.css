@@ -1,0 +1,152 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-image: linear-gradient(to right, #ff5722, #ff9800);
+  color: #2c2c2c;
+}
+
+header {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  background-color: #1f1f1f;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+  display: flex;
+  gap: 50px;
+}
+
+nav a {
+  color: #fdd835;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fdd835;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+.register-section {
+  padding-top: 120px; 
+}
+
+.register-left {
+  text-align: center;
+  color: #fff;
+  padding: 30px;
+  background-color: #0f9986; 
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.register-left img {
+  margin-top: 60px;
+  margin-bottom: 18px;
+  width: 80px;
+  animation: mover 1s infinite alternate;
+}
+
+.register-left p {
+  color: #f0f0f0;
+}
+
+.register-left .btn-primary {
+  background-color: #fdd835;
+  color: #212121;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  margin-top: 15px;
+}
+
+.register-left .btn-primary:hover {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.register-right {
+  background-color: #ffffff;
+  padding: 40px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.register-right h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #212121; 
+  font-weight: 800;
+}
+
+.register-form input::placeholder {
+  color: #888; 
+}
+
+.register-form .form-control {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.register-form .btn-primary {
+  background-color: #1e3a8a;
+  border: none;
+  float: right;
+  padding: 10px 25px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.register-form .btn-primary:hover {
+  background-color: #3b5998;
+  color: #fff;
+}
+
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+
+@media (max-width: 768px) {
+  .register-left {
+    border-radius: 15px 15px 0 0;
+  }
+
+  .register-right {
+    border-radius: 0 0 15px 15px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+}
