@@ -63,7 +63,7 @@ btn.addEventListener("click", () => {
   };
 
   if (!user.title || !user.image || !user.price || !user.rating) {
-    alert("Iltimos, barcha maydonlarni to?ldiring.");
+    alert("Iltimos, barcha maydonlarni toldiring.");
     return;
   }
 
