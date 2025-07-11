@@ -1,95 +1,143 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+:root {
+  --bg-light: #f8f9fa;
+  --bg-dark: #121212;
+  --text-light: #000;
+  --text-dark: #fff;
+  --card-bg-light: #fff;
+  --card-bg-dark: #1e1e1e;
+  --primary: #007bff;
+  --danger: #dc3545;
+  --success: #28a745;
 }
 
 body {
-  padding: 40px 20px;
-  background: linear-gradient(to right, #e0eafc, #cfdef3);
-  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--card-bg-light);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  margin-bottom: 30px;
+  transition: background-color 0.3s ease;
+}
+
+body.dark .navbar {
+  background-color: var(--card-bg-dark);
+}
+
+.navbar .logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-links a,
+.nav-links button {
+  text-decoration: none;
+  color: inherit;
+  font-size: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .form {
-  background-color: white;
-  border-radius: 16px;
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto 40px;
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: var(--card-bg-light);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  transition: background-color 0.3s ease;
+}
+
+body.dark .form {
+  background-color: var(--card-bg-dark);
 }
 
 input {
   padding: 12px;
-  font-size: 15px;
-  border-radius: 12px;
+  font-size: 16px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  width: 220px;
-  transition: all 0.3s ease;
-}
-
-input:focus {
-  border-color: #007bff;
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+  width: 200px;
 }
 
 .btn {
-  background: linear-gradient(to right, #007bff, #00c6ff);
+  background-color: var(--primary);
   color: white;
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 12px 24px;
-  font-size: 16px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: transform 0.3s, background 0.3s;
 }
 
 .btn:hover {
   transform: scale(1.05);
-  background: linear-gradient(to right, #0056b3, #0099cc);
+  background-color: #0056b3;
 }
 
 .prods {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  padding: 0 10px;
+  gap: 20px;
 }
 
 .card {
-  background-color: white;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
+  background-color: var(--card-bg-light);
+  color: inherit;
+  border-radius: 15px;
   padding: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+body.dark .card {
+  background-color: var(--card-bg-dark);
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
   width: 100%;
-  height: 160px;
+  height: 150px;
   object-fit: contain;
   margin-bottom: 15px;
-  transition: 0.3s ease;
 }
 
 .card h1 {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 18px;
   margin-bottom: 10px;
-  color: #222;
 }
 
 .card .desc {
@@ -99,20 +147,19 @@ input:focus {
 }
 
 .card .price {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
-  color: #333;
   margin-bottom: 10px;
 }
 
 .stars {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .star {
-  font-size: 18px;
-  margin: 0 2px;
   color: #fca120;
+  font-size: 20px;
+  margin: 0 2px;
 }
 
 .star.inactive {
@@ -122,18 +169,17 @@ input:focus {
 .buy-btn,
 .delete-btn {
   padding: 10px;
-  width: 100%;
-  border-radius: 10px;
   border: none;
+  width: 100%;
+  border-radius: 8px;
   font-size: 15px;
-  font-weight: bold;
   cursor: pointer;
-  margin-top: 8px;
-  transition: 0.3s ease;
+  margin-top: 10px;
+  transition: 0.3s;
 }
 
 .buy-btn {
-  background-color: #28a745;
+  background-color: var(--success);
   color: white;
 }
 
@@ -142,10 +188,74 @@ input:focus {
 }
 
 .delete-btn {
-  background-color: #dc3545;
+  background-color: var(--danger);
   color: white;
 }
 
 .delete-btn:hover {
   background-color: #c82333;
+}
+
+/* Interaktiv yulduz rating */
+.star-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.star-group .rate-star {
+  font-size: 24px;
+  cursor: pointer;
+  color: #ccc;
+  transition: 0.2s;
+}
+
+.star-group .rate-star.selected,
+.star-group .rate-star:hover,
+.star-group .rate-star:hover ~ .rate-star {
+  color: #fca120;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+body.dark .modal-content {
+  background-color: var(--card-bg-dark);
+  color: white;
+}
+
+#modal-body img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 15px;
 }
