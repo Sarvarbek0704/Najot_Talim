@@ -8,39 +8,25 @@
   <link rel="stylesheet" href="./show_product.css" />
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo"> MyShop</div>
-    <ul class="nav-links">
-      <li><a href="#">Registratsiya</a></li>
-      <li><a href="#">Mahsulotlar</a></li>
-      <li><a href="#">Foydalanuvchilar</a></li>
-      <li><a href="#">Korzinka</a></li>
-      <li><button id="toggle-dark">REjim</button></li>
-    </ul>
-  </nav>
-
-  <!-- Form -->
+  
+  <header>
+    <nav>
+      <a href="./asosiy.html">Registratsiya</a>
+      <a href="./product.html">Product Show</a>
+      <a href="./user.html">Users</a>
+      <button id="toggle-dark">Rejim</button>
+    </nav>
+  </header>
   <div class="form">
     <input type="text" placeholder="Nomi" class="title" />
     <input type="text" placeholder="Rasm manzili (URL)" class="image" />
     <input type="number" placeholder="Narxi $" class="price" />
-    <div class="star-input">
-      <label>Reyting:</label>
-      <div class="star-group">
-        <span class="rate-star" data-val="1">?</span>
-        <span class="rate-star" data-val="2">?</span>
-        <span class="rate-star" data-val="3">?</span>
-        <span class="rate-star" data-val="4">?</span>
-        <span class="rate-star" data-val="5">?</span>
-      </div>
-    </div>
+    <input type="number" placeholder="Reyting (1-5)" class="rating" />
     <button class="btn">Yaratish</button>
   </div>
 
   <div class="prods"></div>
 
-  <!-- Modal -->
   <div class="modal" id="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
