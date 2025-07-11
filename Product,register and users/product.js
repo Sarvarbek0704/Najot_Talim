@@ -18,7 +18,7 @@ let selectedRating = 0;
 function Yulduzcha(rating) {
   let yulduz = "";
   for (let i = 1; i <= 5; i++) {
-    yulduz += `<span class="star ${i > rating ? "inactive" : ""}">?</span>`;
+    yulduz += `<span class="star ${i > rating ? "inactive" : ""}"></span>`;
   }
   return yulduz;
 }
