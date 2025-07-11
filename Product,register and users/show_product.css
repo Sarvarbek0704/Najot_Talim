@@ -231,3 +231,20 @@ body.dark .modal-content {
   font-size: 24px;
   cursor: pointer;
 }
+.delete-btn {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  margin-top: 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(255, 77, 77, 0.3);
+}
+
+.delete-btn:hover {
+  background-color: #e60000;
+  transform: translateY(-2px);
+}
