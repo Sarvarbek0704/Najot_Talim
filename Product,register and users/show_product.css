@@ -2,94 +2,107 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
-  padding: 20px;
-  background-color: #f8f8f8;
+  padding: 40px 20px;
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  min-height: 100vh;
 }
 
 .form {
+  background-color: white;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto 40px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px;
   justify-content: center;
-  margin-bottom: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 input {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 12px;
   border: 1px solid #ccc;
-  width: 200px;
+  width: 220px;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
 }
 
 .btn {
-  background-color: #007bff;
+  background: linear-gradient(to right, #007bff, #00c6ff);
   color: white;
   border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 16px;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
-.cart-link {
-  background-color: orange;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  padding: 10px 20px;
+.btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #0056b3, #0099cc);
 }
 
-.prods,
-.info {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+.prods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 10px;
 }
 
 .card {
-  width: 220px;
   background-color: white;
   border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
   padding: 20px;
   text-align: center;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: scale(1.03);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
   width: 100%;
-  height: 150px;
+  height: 160px;
   object-fit: contain;
   margin-bottom: 15px;
+  transition: 0.3s ease;
 }
 
 .card h1 {
   font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #000;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
 }
 
 .card .desc {
-  font-size: 13px;
-  color: #888;
+  font-size: 14px;
+  color: #666;
   margin-bottom: 10px;
 }
 
 .card .price {
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 10px;
   color: #333;
+  margin-bottom: 10px;
 }
 
 .stars {
@@ -106,26 +119,33 @@ input {
   color: #ccc;
 }
 
-.buy-btn {
-  padding: 10px;
-  width: 100%;
-  border-radius: 0 0 15px 15px;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: #007bff;
-  color: white;
-}
+.buy-btn,
 .delete-btn {
   padding: 10px;
   width: 100%;
-  border-radius: 0 0 15px 15px;
+  border-radius: 10px;
   border: none;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   cursor: pointer;
-  background-color: crimson;
+  margin-top: 8px;
+  transition: 0.3s ease;
+}
+
+.buy-btn {
+  background-color: #28a745;
   color: white;
-  margin-top: 10px;
+}
+
+.buy-btn:hover {
+  background-color: #218838;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
 }
