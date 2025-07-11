@@ -30,6 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
     localStorage.setItem('users', JSON.stringify(users));
 
     alert("Royxatdan otish muvaffaqiyatli!");
-    window.location.href = "./users.html";
+    window.location.href = "./user.html";
   });
 });
