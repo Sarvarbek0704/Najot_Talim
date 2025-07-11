@@ -246,9 +246,11 @@ Form Wrapper
 
 .navbar {
   display: flex;
-  justify-content: center;
-  gap: 40px;
+  justify-content: space-around;
+  max-width: 500px;
+  margin: 0 auto;
 }
+
 
 .navbar a {
   color: #fff;
@@ -257,7 +259,10 @@ Form Wrapper
   font-weight: 600;
   position: relative;
   transition: color 0.3s ease;
+  min-width: 120px;
+  text-align: center;
 }
+
 
 .navbar a:hover {
   color: #f8c291;
