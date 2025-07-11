@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -17,17 +16,20 @@ body {
 }
 
 .main-header {
+  width: 100%;
   background-color: #343a40;
   padding: 15px 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
-  text-align: center;
 }
 
 .navbar {
   display: flex;
-  justify-content: center;
-  gap: 40px;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .navbar a {
@@ -37,6 +39,9 @@ body {
   font-weight: 600;
   position: relative;
   transition: color 0.3s ease;
+  padding: 5px 10px;
+  min-width: 120px;
+  text-align: center;
 }
 
 .navbar a:hover {
@@ -53,6 +58,7 @@ body {
   background-color: #f8c291;
   border-radius: 2px;
 }
+
 .user-heading {
   background-color: #fdd835;
   padding: 12px 24px;
@@ -70,6 +76,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .prods {
@@ -202,5 +209,10 @@ body {
 
   .modal-content {
     padding: 20px;
+  }
+
+  .navbar a {
+    min-width: unset;
+    width: 100%;
   }
 }
