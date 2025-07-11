@@ -19,7 +19,7 @@ function showData(apiUsers = [], localUsers = []) {
         <img src="${e.avatar}" alt="Rasm" />
         <h1>${e.name}</h1>
         <p>Email: ${e.email}</p>
-        <b>Password:"*******"}</b>
+        <b>Password:*******</b>
         <u>API</u>
       </div>
     `);

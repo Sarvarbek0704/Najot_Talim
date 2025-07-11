@@ -236,3 +236,40 @@ Form Wrapper
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Header/navbar dizayni */
+.main-header {
+  background-color: #343a40;
+  padding: 15px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #f8c291;
+}
+
+.navbar a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #f8c291;
+  border-radius: 2px;
+}
