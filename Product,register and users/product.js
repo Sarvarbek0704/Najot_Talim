@@ -35,6 +35,7 @@ function showData(arr) {
         <p class="desc">Lorem ipsum dolor sit amet.</p>
         <p class="price">$${parseFloat(x.price).toFixed(2)}</p>
         <div class="stars">${Yulduzcha(x.rating)}</div>
+        <br>
         <button class="buy-btn">Buy Now</button>
         <button class="delete-btn">O'chirish</button>
       </div>

@@ -157,8 +157,9 @@ body.dark .card .desc {
 
 .stars {
   display: flex;
+  justify-content: center;
   gap: 4px;
-  margin-top: 5px;
+  margin-top: 5px 0;
 }
 
 .star {
