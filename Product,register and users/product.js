@@ -1,4 +1,4 @@
-// script.js
+
 
 const api = axios.create({
   baseURL: "https://686f438d91e85fac42a04644.mockapi.io",
@@ -75,17 +75,6 @@ btn.addEventListener("click", () => {
   ratingStars.forEach((s) => s.classList.remove("selected"));
 });
 
-// Interaktiv yulduz tanlash
-ratingStars.forEach((star) => {
-  star.addEventListener("click", () => {
-    selectedRating = +star.dataset.val;
-    ratingStars.forEach((s) => {
-      s.classList.toggle("selected", +s.dataset.val <= selectedRating);
-    });
-  });
-});
-
-// Delete & Modal
 box.addEventListener("click", async (e) => {
   const card = e.target.closest(".card");
   const id = card?.dataset.id;
@@ -109,13 +98,10 @@ box.addEventListener("click", async (e) => {
   }
 });
 
-// Modal yopish
 closeModal.addEventListener("click", () => (modal.style.display = "none"));
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") modal.style.display = "none";
-});
-
-// Dark mode toggle
+})
 const toggleDark = document.getElementById("toggle-dark");
 toggleDark.addEventListener("click", () => {
   document.body.classList.toggle("dark");

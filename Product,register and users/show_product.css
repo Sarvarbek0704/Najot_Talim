@@ -1,66 +1,66 @@
-:root {
-  --bg-light: #f8f9fa;
-  --bg-dark: #121212;
-  --text-light: #000;
-  --text-dark: #fff;
-  --card-bg-light: #fff;
-  --card-bg-dark: #1e1e1e;
-  --primary: #007bff;
-  --danger: #dc3545;
-  --success: #28a745;
-}
 
 body {
-  margin: 0;
-  padding: 20px;
   font-family: 'Inter', sans-serif;
-  background-color: var(--bg-light);
-  color: var(--text-light);
+  background-image: linear-gradient(to right, #ff5722, #ff9800);
+  color: #2c2c2c;
+  margin: 0;
+  padding-top: 100px; 
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.dark {
-  background-color: var(--bg-dark);
-  color: var(--text-dark);
+  background: #121212;
+  color: #fff;
 }
 
-.navbar {
+header {
+  width: 100%;
+  padding: 20px 0;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: var(--card-bg-light);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  margin-bottom: 30px;
-  transition: background-color 0.3s ease;
+  justify-content: center;
+  background-color: #1f1f1f;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-body.dark .navbar {
-  background-color: var(--card-bg-dark);
-}
-
-.navbar .logo {
-  font-size: 22px;
-  font-weight: bold;
-}
-
-.nav-links {
+nav {
   display: flex;
-  gap: 20px;
+  gap: 50px;
   align-items: center;
-  list-style: none;
 }
 
-.nav-links a,
-.nav-links button {
-  text-decoration: none;
-  color: inherit;
-  font-size: 16px;
+nav a, nav button {
+  color: #fdd835;
   background: none;
   border: none;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
   cursor: pointer;
   transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fdd835;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover, nav button:hover {
+  color: #ffffff;
 }
 
 .form {
@@ -69,19 +69,20 @@ body.dark .navbar {
   gap: 15px;
   justify-content: center;
   padding: 20px;
-  background-color: var(--card-bg-light);
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
-  transition: background-color 0.3s ease;
+  background-color: #fff;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
 }
 
 body.dark .form {
-  background-color: var(--card-bg-dark);
+  background-color: #222;
 }
 
-input {
-  padding: 12px;
+.form input {
+  padding: 10px;
   font-size: 16px;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -89,38 +90,37 @@ input {
 }
 
 .btn {
-  background-color: var(--primary);
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 8px;
-  padding: 12px 24px;
+  padding: 10px 20px;
   cursor: pointer;
-  transition: transform 0.3s, background 0.3s;
+  transition: transform 0.2s, background-color 0.3s;
 }
 
 .btn:hover {
   transform: scale(1.05);
   background-color: #0056b3;
 }
-
 .prods {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
+  padding: 0 20px;
 }
 
 .card {
-  background-color: var(--card-bg-light);
-  color: inherit;
+  background-color: #fff;
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 body.dark .card {
-  background-color: var(--card-bg-dark);
+  background-color: #1e1e1e;
 }
 
 .card:hover {
@@ -136,24 +136,27 @@ body.dark .card {
 }
 
 .card h1 {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
 .card .desc {
   font-size: 14px;
-  color: #666;
-  margin-bottom: 10px;
+  color: #555;
+}
+
+body.dark .card .desc {
+  color: #ccc;
 }
 
 .card .price {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 .stars {
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 .star {
@@ -166,96 +169,65 @@ body.dark .card {
   color: #ccc;
 }
 
-.buy-btn,
-.delete-btn {
-  padding: 10px;
+.buy-btn {
+  background-color: #28a745;
+  color: white;
   border: none;
+  padding: 10px;
   width: 100%;
   border-radius: 8px;
-  font-size: 15px;
+  font-size: 16px;
   cursor: pointer;
-  margin-top: 10px;
-  transition: 0.3s;
-}
-
-.buy-btn {
-  background-color: var(--success);
-  color: white;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
 .buy-btn:hover {
   background-color: #218838;
+  transform: scale(1.03);
 }
 
-.delete-btn {
-  background-color: var(--danger);
-  color: white;
-}
-
-.delete-btn:hover {
-  background-color: #c82333;
-}
-
-/* Interaktiv yulduz rating */
-.star-input {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-}
-
-.star-group .rate-star {
-  font-size: 24px;
-  cursor: pointer;
-  color: #ccc;
-  transition: 0.2s;
-}
-
-.star-group .rate-star.selected,
-.star-group .rate-star:hover,
-.star-group .rate-star:hover ~ .rate-star {
-  color: #fca120;
-}
-
-/* Modal */
+/* Modal styles */
 .modal {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
+  z-index: 10000;
+  left: 0; top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0,0,0,0.6);
   justify-content: center;
   align-items: center;
-  z-index: 1000;
 }
 
 .modal-content {
   background-color: white;
   padding: 30px;
-  border-radius: 12px;
+  border-radius: 10px;
   max-width: 400px;
   width: 90%;
   position: relative;
 }
 
-.modal-content .close {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 24px;
-  cursor: pointer;
-}
-
 body.dark .modal-content {
-  background-color: var(--card-bg-dark);
+  background-color: #2c2c2c;
   color: white;
 }
 
-#modal-body img {
+.modal-content img {
   width: 100%;
   height: 180px;
   object-fit: contain;
   margin-bottom: 15px;
+}
+
+.modal-content h2 {
+  margin: 10px 0;
+}
+
+.modal-content .close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
 }
