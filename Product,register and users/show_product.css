@@ -156,18 +156,33 @@ body.dark .card .desc {
 }
 
 .stars {
-  margin: 10px 0;
+  display: flex;
+  gap: 4px;
+  margin-top: 5px;
 }
 
 .star {
-  color: #fca120;
-  font-size: 20px;
-  margin: 0 2px;
+  width: 20px;
+  height: 20px;
+  background-color: gold;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
 }
 
 .star.inactive {
-  color: #ccc;
+  background-color: lightgray;
 }
+
 
 .buy-btn {
   background-color: #28a745;
